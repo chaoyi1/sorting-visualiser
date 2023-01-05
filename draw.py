@@ -15,4 +15,4 @@ def draw_array(screen, screen_height, bar_width, x, array):
         y = screen_height - height
         draw_bar(screen, bar_width, height, x, y)
         x += bar_width
-    pygame.display.flip()
+    pygame.display.update()

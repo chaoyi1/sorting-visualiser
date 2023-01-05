@@ -32,13 +32,12 @@ def main():
     running = True
     sorted = False
     while running:
+        clock.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
         if not sorted:
             sorting_algos[algo_name](screen, HEIGHT, BAR_WIDTH, array, 0, len(array)-1)
-        pygame.display.flip()
-        clock.tick(60)
     
 
 if __name__ == "__main__":
