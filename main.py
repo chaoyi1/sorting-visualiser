@@ -10,6 +10,8 @@ BAR_WIDTH = 2
 def main():
     pygame.init()
 
+    clock = pygame.time.Clock()
+
     sorting_algos ={"selection": selection_sort,
                     "bubble": bubble_sort,
                     "insertion": insertion_sort,
@@ -36,6 +38,7 @@ def main():
         if not sorted:
             sorting_algos[algo_name](screen, HEIGHT, BAR_WIDTH, array, 0, len(array)-1)
         pygame.display.flip()
+        clock.tick(60)
     
 
 if __name__ == "__main__":

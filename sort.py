@@ -10,7 +10,6 @@ def selection_sort(screen, screen_height, bar_width, array, l, r):
                 min_index = j
         array[i], array[min_index] = array[min_index], array[i]
         draw_array(screen, screen_height, bar_width, 0, array)
-        pygame.time.wait(10)
 
 def bubble_sort(screen, screen_height, bar_width, array, l, r):
     n = len(array)
@@ -19,7 +18,6 @@ def bubble_sort(screen, screen_height, bar_width, array, l, r):
             if array[j] > array[j+1]:
                 array[j], array[j+1] = array[j+1], array[j]
         draw_array(screen, screen_height, bar_width, 0, array)
-        pygame.time.wait(10)
 
 def insertion_sort(screen, screen_height, bar_width, array, l, r):
     n  = len(array)
@@ -31,7 +29,6 @@ def insertion_sort(screen, screen_height, bar_width, array, l, r):
             j -= 1
         array[j+1] = key
         draw_array(screen, screen_height, bar_width, 0, array)
-        pygame.time.wait(10)
 
 def merge(screen, screen_height, bar_width, array, l, mid, r):
     n1 = mid - l + 1
@@ -61,7 +58,6 @@ def merge(screen, screen_height, bar_width, array, l, mid, r):
         j += 1
         k += 1
     draw_array(screen, screen_height, bar_width, 0, array)
-    pygame.time.wait(10)
 
 def merge_sort(screen, screen_height, bar_width, array, l, r):
     if (l < r):
@@ -79,7 +75,6 @@ def partition(screen, screen_height, bar_width, array, l, r):
             array[i], array[j] = array[j], array[i]
     array[i+1], array[r] = array[r], array[i+1]
     draw_array(screen, screen_height, bar_width, 0, array)
-    pygame.time.wait(10)
     return i + 1
 
 def quick_sort(screen, screen_height, bar_width, array, l, r):
