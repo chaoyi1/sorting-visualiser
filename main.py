@@ -35,9 +35,11 @@ def main():
         clock.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                running = False
+                pygame.quit()
+                sys.exit()
         if not sorted:
             sorting_algos[algo_name](screen, HEIGHT, BAR_WIDTH, array, 0, len(array)-1)
+            sorted = True
     
 
 if __name__ == "__main__":
