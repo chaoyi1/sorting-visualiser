@@ -14,7 +14,7 @@ def main():
                     "bubble": bubble_sort,
                     "insertion": insertion_sort,
                     "merge": merge_sort,
-                    "quick": quick_sort} 
+                    "quick": quick_sort}
 
     pygame.display.set_caption("visualise")
 
