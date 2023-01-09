@@ -3,8 +3,8 @@ import random
 import sys
 from sort import *
 
-WIDTH = 1920
-HEIGHT = 1080
+SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
 BAR_WIDTH = 2
 
 def main():
@@ -20,11 +20,13 @@ def main():
 
     pygame.display.set_caption("visualise")
 
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     
     screen.fill((255, 255, 255))
 
-    array = random.sample(range(1, HEIGHT+1), WIDTH // BAR_WIDTH)
+    draw_data = DrawData(SCREEN_HEIGHT,SCREEN_WIDTH,BAR_WIDTH,0)
+
+    array = random.sample(range(1, SCREEN_HEIGHT+1), SCREEN_WIDTH // BAR_WIDTH)
     algo_name = sys.argv[1]
     if algo_name not in sorting_algos:
         raise ValueError("Invalid method name.")
@@ -38,7 +40,7 @@ def main():
                 pygame.quit()
                 sys.exit()
         if not sorted:
-            sorting_algos[algo_name](screen, HEIGHT, BAR_WIDTH, array, 0, len(array)-1)
+            sorting_algos[algo_name](screen, draw_data, array)
             sorted = True
     
 
